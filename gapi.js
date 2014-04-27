@@ -376,7 +376,7 @@ angular.module('gapi', [])
         gapi.auth.authorize({
           client_id: app.clientId,
           scope: app.scopes,
-          immediate: false     
+          immediate: (app.immediate ? true : false)     
         }, function() {
           app.oauthToken = gapi.auth.getToken();
           deferred.resolve(app);
